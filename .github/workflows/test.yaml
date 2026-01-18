@@ -1,0 +1,26 @@
+---
+name: test
+on:
+  pull_request_target:
+  push:
+    branches:
+    # Run on merge queue branches for branch protection compatibility.
+    - gh-readonly-queue/**
+    - master
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        go-version:
+        - stable
+        - oldstable
+        os:
+        - ubuntu-latest
+        - macos-latest
+    uses: tomasbasham/shared-workflows/.github/workflows/test-go.yaml@v1
+    with:
+      go-version: ${{ matrix.go-version }}
+      runs-on: ${{ matrix.os }}
