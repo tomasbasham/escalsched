@@ -1,0 +1,16 @@
+# vi: ft=dosini
+
+[general]
+# See http://jorisroovers.github.io/gitlint/contrib_rules for details
+contrib=contrib-title-conventional-commits
+ignore=body-is-missing
+regex-style-search=True
+
+[title-max-length]
+line-length=50
+
+[body-max-line-length]
+line-length=72
+
+[ignore-body-lines]
+regex=(^Co-Authored-By)|(^Signed-off-by)|(.*)https?://(.*)
