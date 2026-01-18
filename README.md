@@ -1,4 +1,4 @@
-# escalsched
+# escalsched ![test](https://github.com/tomasbasham/escalsched/workflows/test/badge.svg)
 
 A Go scheduler that implements priority-based task scheduling with time-based
 escalation policies. Tasks are processed according to their priority levels,
